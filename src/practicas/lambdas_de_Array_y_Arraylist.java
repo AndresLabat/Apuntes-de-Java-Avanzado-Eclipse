@@ -58,6 +58,54 @@ public class lambdas_de_Array_y_Arraylist {
 		System.out.println("La suma de sus numeros pares es: " + resultado2); 	// el resultado es 0 + 2 + 4 + 6 + 8 + 10
 		
 		
+		// USO DE UN METODO CON LAMBDA:
+		
+		String apellido = "labat";
+		char comienzoApellido = primeraLetraMayus(apellido);
+		System.out.println(comienzoApellido);
+		
+		// USO DE METODOS DE TRANSFORMACION DE TIPO DE DATO:
+					
+		String CCC = "12345678";
+		String CCC2 = "a123a";
+				
+		posicion0(CCC);
+		
+		try {
+			posicion0(CCC2);
+		} catch(NumberFormatException e) {			
+		}catch(StringIndexOutOfBoundsException e) {}
+		
+		
+		
+	}
+	
+	public static char primeraLetraMayus (String nombre) {
+		return nombre.toUpperCase().charAt(0);	
+	}
+		
+	
+	
+	public static char getFirstChar (String nombre) {
+		return nombre.charAt(0);
+	}
+	
+	
+	
+	public static String CharToString (char a) {
+		return String.valueOf(a);
+	}
+	
+	public static int StringToInt (String nombre) {
+		return Integer. parseInt(nombre);
+	}
+	
+	public static int posicion0 (String string) {
+		
+		String StringPosicion = CharToString(string.charAt(0));		
+		int NumPosicion = StringToInt(StringPosicion);
+		return NumPosicion;	
+		
 	}
 
 }

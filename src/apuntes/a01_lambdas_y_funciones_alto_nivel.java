@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class a01_Funciones {
+public class a01_lambdas_y_funciones_alto_nivel {
 
 	private static int contador = 0;	//	variable creada para la funcion impura
 	
 	//	crear una funcion que es como una variable:
 	
-	private Function <String, String> toMayus = (x) -> x.toUpperCase();
+	private Function <String, String> toMayus = x -> x.toUpperCase();
 			// el primer String indica que acepta un String como parametro de entrada 
 			// el segundo String indica que acepta un parametro de tipo String como parametro de salida
 	
-	private Function <Integer, Integer> sumador = (x) -> x.sum(x, x);
+	private Function <Integer, Integer> sumador = x -> x.sum(x, x);
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -39,7 +39,7 @@ public class a01_Funciones {
 		String nombre = "andres";
 		System.out.println(toMayuscula (nombre));	
 		
-		a01_Funciones f = new a01_Funciones();	//	crea un objeto
+		a01_lambdas_y_funciones_alto_nivel f = new a01_lambdas_y_funciones_alto_nivel();	//	crea un objeto
 		f.pruebas();
 		
 		//	FUNCIONES COMPLEJAS EN UN ARRAYLIST:
