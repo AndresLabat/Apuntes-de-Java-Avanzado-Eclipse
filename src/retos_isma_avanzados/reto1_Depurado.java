@@ -2,7 +2,7 @@ package retos_isma_avanzados;
 
 import java.util.Scanner;
 
-public class reto1_ConMetodos {
+public class reto1_Depurado {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -82,14 +82,14 @@ public class reto1_ConMetodos {
 			
 			try {
 				
-				posicion0(CCC);
-				posicion1(CCC);
-				posicion2(CCC);
-				posicion3(CCC);
-				posicion4(CCC);
-				posicion5(CCC);
-				posicion6(CCC);
-				posicion7(CCC);
+				posicion(CCC,0);
+				posicion(CCC,1);
+				posicion(CCC,2);
+				posicion(CCC,3);
+				posicion(CCC,4);
+				posicion(CCC,5);
+				posicion(CCC,6);
+				posicion(CCC,7);
 				
 			} catch(NumberFormatException e) {			
 			} catch(StringIndexOutOfBoundsException e) {}
@@ -108,8 +108,8 @@ public class reto1_ConMetodos {
 			
 			try {
 				
-			int A = (posicion0(CCC)*4) + (posicion1(CCC)*8) + (posicion2(CCC)*5) + (posicion3(CCC)*10);
-			int B = (posicion4(CCC)*9) + (posicion5(CCC)*7) + (posicion6(CCC)*3) + (posicion7(CCC)*6);
+			int A = (posicion(CCC,0)*4) + (posicion(CCC,1)*8) + (posicion(CCC,2)*5) + (posicion(CCC,3)*10);
+			int B = (posicion(CCC,4)*9) + (posicion(CCC,5)*7) + (posicion(CCC,6)*3) + (posicion(CCC,7)*6);
 			int C = (A + B)%11;
 			NumControl1 = 11 - C;	// este es el que debe de ser
 			
@@ -129,17 +129,17 @@ public class reto1_ConMetodos {
 		
 			try {
 				
-				posicion2(CCC2);
-				posicion3(CCC2);
-				posicion4(CCC2);
-				posicion5(CCC2);
-				posicion6(CCC2);
-				posicion7(CCC2);
+				posicion(CCC2,2);
+				posicion(CCC2,3);
+				posicion(CCC2,4);
+				posicion(CCC2,5);
+				posicion(CCC2,6);
+				posicion(CCC2,7);
 				
-				posicion0(CCC3);
-				posicion1(CCC3);
-				posicion2(CCC3);
-				posicion3(CCC3);
+				posicion(CCC3,0);
+				posicion(CCC3,1);
+				posicion(CCC3,2);
+				posicion(CCC3,3);
 				
 			} catch(NumberFormatException e) {			
 			} catch(StringIndexOutOfBoundsException e) {}
@@ -154,9 +154,9 @@ public class reto1_ConMetodos {
 			
 			try {
 				
-			int D = (posicion2(CCC2)*1) + (posicion3(CCC2)*2) + (posicion4(CCC2)*4)+ (posicion5(CCC2)*8)
-					+ (posicion6(CCC2)*5) + (posicion7(CCC2)*10) + (posicion0(CCC3)*9)+ (posicion1(CCC3)*7)
-					+ (posicion2(CCC3)*3)+ (posicion3(CCC3)*6);	
+			int D = (posicion(CCC2,2)*1) + (posicion(CCC2,3)*2) + (posicion(CCC2,4)*4)+ (posicion(CCC2,5)*8)
+					+ (posicion(CCC2,6)*5) + (posicion(CCC2,7)*10) + (posicion(CCC3,0)*9)+ (posicion(CCC3,1)*7)
+					+ (posicion(CCC3,2)*3)+ (posicion(CCC3,3)*6);	
 			int E = D%11;
 						
 			NumControl2 = 11-E;
@@ -181,7 +181,7 @@ public class reto1_ConMetodos {
 			
 			try {
 				
-			if(posicion0(CCC2) == NumControl1) {
+			if(posicion(CCC2,0) == NumControl1) {
 				NumControl1Boolean = true;
 				System.out.println("el primer digito de control es correcto");
 			}else {
@@ -189,7 +189,7 @@ public class reto1_ConMetodos {
 				System.out.println("el primer digito de control es incorrecto, deberia de ser un " + NumControl1);
 			}
 			
-			if(posicion1(CCC2) == NumControl2) {
+			if(posicion(CCC2,1) == NumControl2) {
 				NumControl2Boolean = true;
 				System.out.println("el segundo digito de control es correcto");
 			}else {
@@ -220,62 +220,11 @@ public class reto1_ConMetodos {
 		return Integer. parseInt(nombre);
 	}
 	
-	public static int posicion0 (String string) {
-						
-		String StringPosicion = CharToString(string.charAt(0));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}
-	
-	public static int posicion1 (String string) {
+	public static int posicion (String string, int posicion) {
 				
-		String StringPosicion = CharToString(string.charAt(1));		
+		String StringPosicion = CharToString(string.charAt(posicion));		
 		int NumPosicion = StringToInt(StringPosicion);
 		return NumPosicion;	
-	}
-	
-	
-	public static int posicion2 (String string) {
-						
-		String StringPosicion = CharToString(string.charAt(2));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}
-	
-	public static int posicion3 (String string) {
-				
-		String StringPosicion = CharToString(string.charAt(3));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}	
-	
-	public static int posicion4 (String string) {
-		
-		String StringPosicion = CharToString(string.charAt(4));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}
-	
-	public static int posicion5 (String string) {
-				
-		String StringPosicion = CharToString(string.charAt(5));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}
-	
-	
-	public static int posicion6 (String string) {
-						
-		String StringPosicion = CharToString(string.charAt(6));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}
-	
-	public static int posicion7 (String string) {
-				
-		String StringPosicion = CharToString(string.charAt(7));		
-		int NumPosicion = StringToInt(StringPosicion);
-		return NumPosicion;	
-	}		
+	}			
 	
 }
